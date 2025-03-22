@@ -1,6 +1,14 @@
 
 import React from 'react';
 import { Instagram, Twitter, Facebook } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from "@/components/ui/carousel";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface PlayerProps {
   name: string;
@@ -88,13 +96,77 @@ const players: PlayerProps[] = [
     social: {
       instagram: "https://www.instagram.com/mohammedsirajofficial"
     }
+  },
+  {
+    name: "Dinesh Karthik",
+    role: "Wicket-Keeper",
+    number: 21,
+    image: "https://assets.bcci.tv/bcci/photos/92/9a49d214-97ab-4c3d-ac33-bd0d24a76f02.jpg",
+    stats: {
+      matches: 188,
+      runs: 4376,
+      average: 25.3,
+      strikeRate: 133.1
+    },
+    social: {
+      instagram: "https://www.instagram.com/dk00019",
+      twitter: "https://twitter.com/DineshKarthik"
+    }
+  },
+  {
+    name: "Rajat Patidar",
+    role: "Batsman",
+    number: 16,
+    image: "https://assets.bcci.tv/bcci/photos/1205/0719b463-9ed5-4a2a-bd9f-3a31dcc1fdf4.jpg",
+    stats: {
+      matches: 8,
+      runs: 224,
+      average: 32.0,
+      strikeRate: 156.6
+    },
+    social: {
+      instagram: "https://www.instagram.com/rajat.patidar"
+    }
+  },
+  {
+    name: "Wanindu Hasaranga",
+    role: "All-Rounder",
+    number: 49,
+    image: "https://assets.bcci.tv/bcci/photos/1007/f47cef60-2bce-471c-9e36-d497cef7beca.jpg",
+    stats: {
+      matches: 21,
+      wickets: 29,
+      runs: 122,
+      economy: 7.94,
+      strikeRate: 151.2
+    },
+    social: {
+      instagram: "https://www.instagram.com/wanindu_hasaranga",
+      twitter: "https://twitter.com/Wanindu49"
+    }
+  },
+  {
+    name: "Harshal Patel",
+    role: "Bowler",
+    number: 36,
+    image: "https://assets.bcci.tv/bcci/photos/943/aa09f398-7390-4b8e-af24-41aa6c8cb3a0.jpg",
+    stats: {
+      matches: 80,
+      wickets: 97,
+      economy: 8.79,
+      strikeRate: 16.6
+    },
+    social: {
+      instagram: "https://www.instagram.com/harshalvp23",
+      twitter: "https://twitter.com/HarshalPatel23"
+    }
   }
 ];
 
 const PlayerCard: React.FC<{ player: PlayerProps; index: number }> = ({ player, index }) => {
   return (
-    <div className={`card-hover opacity-0 ${index === 0 ? 'animate-fade-in' : index === 1 ? 'animate-fade-in-delay-1' : index === 2 ? 'animate-fade-in-delay-2' : 'animate-fade-in-delay-3'}`}>
-      <div className="relative group overflow-hidden rounded-2xl bg-white dark:bg-rcb-darkgray shadow-lg transition-all duration-500">
+    <div className={`card-hover h-full`}>
+      <div className="relative group overflow-hidden rounded-2xl bg-white dark:bg-rcb-darkgray shadow-lg transition-all duration-500 h-full">
         {/* Player number - only visible when not hovering */}
         <div className="absolute top-4 left-4 bg-rcb-red text-white text-xl font-bold h-12 w-12 flex items-center justify-center rounded-full z-10 group-hover:opacity-0 transition-opacity duration-300">
           {player.number}
@@ -209,6 +281,48 @@ const PlayerCard: React.FC<{ player: PlayerProps; index: number }> = ({ player, 
   );
 };
 
+const MobilePlayerCarousel = () => {
+  return (
+    <div className="block lg:hidden w-full">
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+      >
+        <CarouselContent>
+          {players.map((player, index) => (
+            <CarouselItem key={player.name} className="md:basis-1/2 lg:basis-1/3 h-full">
+              <PlayerCard player={player} index={index} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <div className="flex justify-center gap-2 mt-4">
+          <CarouselPrevious className="static mx-2 transform-none bg-rcb-red text-white hover:bg-rcb-red/90 border-none" />
+          <CarouselNext className="static mx-2 transform-none bg-rcb-red text-white hover:bg-rcb-red/90 border-none" />
+        </div>
+      </Carousel>
+    </div>
+  );
+};
+
+const DesktopPlayerScroll = () => {
+  return (
+    <div className="hidden lg:block w-full">
+      <ScrollArea className="w-full whitespace-nowrap rounded-md">
+        <div className="flex space-x-6 pb-6">
+          {players.map((player, index) => (
+            <div key={player.name} className="w-72">
+              <PlayerCard player={player} index={index} />
+            </div>
+          ))}
+        </div>
+      </ScrollArea>
+    </div>
+  );
+};
+
 const PlayerCards = () => {
   return (
     <section id="players" className="section-container">
@@ -218,11 +332,8 @@ const PlayerCards = () => {
         <p className="section-subheading opacity-0 animate-fade-in-delay-2">The perfect blend of experience, talent and passion.</p>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        {players.map((player, index) => (
-          <PlayerCard key={player.name} player={player} index={index} />
-        ))}
-      </div>
+      <MobilePlayerCarousel />
+      <DesktopPlayerScroll />
       
       <div className="text-center mt-12">
         <a 

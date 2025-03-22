@@ -14,11 +14,23 @@ const Index = () => {
     // Function to handle reveal animations on scroll
     const handleScrollAnimation = () => {
       const reveals = document.querySelectorAll('.reveal');
+      const scrollAnimations = document.querySelectorAll('.scroll-animation');
       
       reveals.forEach((element) => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150; // Adjust this value to control when elements start animating
+        
+        if (elementTop < windowHeight - elementVisible) {
+          element.classList.add('active');
+        }
+      });
+      
+      // Handle horizontal scroll animations
+      scrollAnimations.forEach((element) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 100;
         
         if (elementTop < windowHeight - elementVisible) {
           element.classList.add('active');
@@ -47,10 +59,22 @@ const Index = () => {
         <MatchCountdown />
       </div>
       
-      <PlayerCards />
-      <MatchSchedule />
-      <AppPreview />
-      <MerchandisePreview />
+      <div className="reveal">
+        <PlayerCards />
+      </div>
+      
+      <div className="reveal">
+        <MatchSchedule />
+      </div>
+      
+      <div className="reveal">
+        <AppPreview />
+      </div>
+      
+      <div className="reveal">
+        <MerchandisePreview />
+      </div>
+      
       <Footer />
     </div>
   );
