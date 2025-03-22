@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true); // Set dark mode as default
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +18,18 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    // Apply dark mode on initial load and when toggled
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
   }, [isDarkMode]);
+
+  // Set dark mode on initial load
+  useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);

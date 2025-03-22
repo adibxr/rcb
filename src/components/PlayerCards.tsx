@@ -95,8 +95,8 @@ const PlayerCard: React.FC<{ player: PlayerProps; index: number }> = ({ player, 
   return (
     <div className={`card-hover opacity-0 ${index === 0 ? 'animate-fade-in' : index === 1 ? 'animate-fade-in-delay-1' : index === 2 ? 'animate-fade-in-delay-2' : 'animate-fade-in-delay-3'}`}>
       <div className="relative group overflow-hidden rounded-2xl bg-white dark:bg-rcb-darkgray shadow-lg transition-all duration-500">
-        {/* Player number */}
-        <div className="absolute top-4 left-4 bg-rcb-red text-white text-xl font-bold h-12 w-12 flex items-center justify-center rounded-full z-10">
+        {/* Player number - only visible when not hovering */}
+        <div className="absolute top-4 left-4 bg-rcb-red text-white text-xl font-bold h-12 w-12 flex items-center justify-center rounded-full z-10 group-hover:opacity-0 transition-opacity duration-300">
           {player.number}
         </div>
         
