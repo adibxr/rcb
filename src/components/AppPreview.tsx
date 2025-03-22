@@ -132,7 +132,14 @@ const AppPreview = () => {
               <div className="w-full h-full bg-rcb-black overflow-y-auto">
                 {/* App header */}
                 <div className="bg-rcb-red px-4 py-3 flex items-center justify-between">
-                  <div className="text-white font-bold text-sm">RCB App</div>
+                  <div className="flex items-center">
+                    <span className="text-white font-bold text-sm mr-1">RCB</span>
+                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" fill="#ED1C24"/>
+                      <path d="M7 10C8.10457 10 9 9.10457 9 8C9 6.89543 8.10457 6 7 6C5.89543 6 5 6.89543 5 8C5 9.10457 5.89543 10 7 10Z" fill="#FFD700"/>
+                      <path d="M14.5 13.5C15.8807 13.5 17 12.3807 17 11C17 9.61929 15.8807 8.5 14.5 8.5C13.1193 8.5 12 9.61929 12 11C12 12.3807 13.1193 13.5 14.5 13.5Z" fill="#FFD700"/>
+                    </svg>
+                  </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 rounded-full bg-white/80"></div>
                     <div className="w-3 h-3 rounded-full bg-white/80"></div>

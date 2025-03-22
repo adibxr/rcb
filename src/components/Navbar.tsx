@@ -66,7 +66,7 @@ const Navbar = () => {
           <a href="#merchandise" className="text-sm font-medium text-gray-700 hover:text-rcb-red dark:text-gray-300 dark:hover:text-rcb-red transition-colors">
             Merchandise
           </a>
-          <a href="#fans" className="text-sm font-medium text-gray-700 hover:text-rcb-red dark:text-gray-300 dark:hover:text-rcb-red transition-colors">
+          <a href="#fan-zone" className="text-sm font-medium text-gray-700 hover:text-rcb-red dark:text-gray-300 dark:hover:text-rcb-red transition-colors">
             Fan Zone
           </a>
         </div>
@@ -136,7 +136,7 @@ const Navbar = () => {
           <a href="#merchandise" className="block py-3 px-4 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-rcb-red dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-rcb-red rounded-md transition-colors">
             Merchandise
           </a>
-          <a href="#fans" className="block py-3 px-4 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-rcb-red dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-rcb-red rounded-md transition-colors">
+          <a href="#fan-zone" className="block py-3 px-4 text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-rcb-red dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-rcb-red rounded-md transition-colors">
             Fan Zone
           </a>
           <Button 
