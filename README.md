@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/2c164496-71b7-425d-ad01-818dce2bf8c4
+**URL**: https://winrcb2025.vercel.app/
 
 
 
