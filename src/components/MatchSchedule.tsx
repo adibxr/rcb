@@ -201,7 +201,7 @@ const MatchSchedule = () => {
         </div>
         
         <div className="text-center mt-10 opacity-0 animate-fade-in-delay-4">
-          <Button className="rcb-btn-outline">
+          <Button className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-full bg-transparent text-rcb-red border-2 border-rcb-red hover:bg-rcb-red hover:text-white transition-all">
             View Full Schedule
           </Button>
         </div>

@@ -139,7 +139,7 @@ const MerchandisePreview = () => {
       </div>
       
       <div className="text-center mt-12 opacity-0 animate-fade-in-delay-4">
-        <Button className="rcb-btn-primary">
+        <Button className="rcb-btn relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-full bg-rcb-red text-white hover:bg-rcb-red/90 transition-all shadow-lg">
           Visit Store
         </Button>
       </div>

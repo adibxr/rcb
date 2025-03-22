@@ -117,19 +117,19 @@
 /* Custom components */
 @layer components {
   .rcb-btn {
-    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-full group;
+    @apply relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-full;
   }
   
   .rcb-btn-primary {
-    @apply rcb-btn bg-rcb-red text-white hover:bg-rcb-red/90 transition-all shadow-lg;
+    @apply bg-rcb-red text-white hover:bg-rcb-red/90 transition-all shadow-lg;
   }
   
   .rcb-btn-outline {
-    @apply rcb-btn bg-transparent text-rcb-red border-2 border-rcb-red hover:bg-rcb-red hover:text-white transition-all;
+    @apply bg-transparent text-rcb-red border-2 border-rcb-red hover:bg-rcb-red hover:text-white transition-all;
   }
   
   .rcb-btn-gold {
-    @apply rcb-btn bg-rcb-gold text-white hover:bg-rcb-gold/90 transition-all shadow-lg;
+    @apply bg-rcb-gold text-white hover:bg-rcb-gold/90 transition-all shadow-lg;
   }
   
   .section-container {

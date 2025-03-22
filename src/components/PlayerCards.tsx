@@ -227,7 +227,7 @@ const PlayerCards = () => {
       <div className="text-center mt-12">
         <a 
           href="#" 
-          className="rcb-btn-primary inline-flex items-center opacity-0 animate-fade-in-delay-4"
+          className="rcb-btn relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-bold rounded-full bg-rcb-red text-white hover:bg-rcb-red/90 transition-all shadow-lg opacity-0 animate-fade-in-delay-4"
         >
           View All Players
           <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

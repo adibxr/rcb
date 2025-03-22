@@ -58,7 +58,7 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-6 opacity-0 animate-fade-in-delay-2">
               <Button 
-                className="rcb-btn-primary text-lg px-8 py-3"
+                className="rcb-btn rcb-btn-primary text-lg px-8 py-3"
                 onClick={() => scrollToSection('matches')}
               >
                 Upcoming Matches
