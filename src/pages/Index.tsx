@@ -7,6 +7,7 @@ import PlayerCards from '@/components/PlayerCards';
 import MatchSchedule from '@/components/MatchSchedule';
 import AppPreview from '@/components/AppPreview';
 import MerchandisePreview from '@/components/MerchandisePreview';
+import FanZone from '@/components/FanZone';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -69,6 +70,10 @@ const Index = () => {
       
       <div className="reveal">
         <AppPreview />
+      </div>
+      
+      <div className="reveal">
+        <FanZone />
       </div>
       
       <div className="reveal">

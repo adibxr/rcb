@@ -24,6 +24,11 @@ const AppPreview = () => {
       title: "AR Player Experience",
       description: "Take selfies with virtual RCB players using augmented reality.",
       icon: "📱"
+    },
+    {
+      title: "Fan Zone Access",
+      description: "Share your thoughts, photos and connect with other RCB fans.",
+      icon: "📢"
     }
   ];
 
@@ -68,12 +73,7 @@ const AppPreview = () => {
             {appFeatures.map((feature, index) => (
               <div 
                 key={feature.title}
-                className={`bg-white dark:bg-rcb-darkgray rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl opacity-0 ${
-                  index === 0 ? 'animate-fade-in-left' :
-                  index === 1 ? 'animate-fade-in-left' :
-                  index === 2 ? 'animate-fade-in-left' :
-                  'animate-fade-in-left'
-                }`}
+                className={`bg-white dark:bg-rcb-darkgray rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 opacity-0 animate-fade-in-left`}
                 style={{ animationDelay: `${0.2 + index * 0.1}s` }}
               >
                 <div className="flex">
@@ -90,7 +90,7 @@ const AppPreview = () => {
             
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-10 opacity-0 animate-fade-in-delay-4">
               <Button 
-                className="rcb-btn-primary py-6 space-x-2"
+                className="bg-rcb-red hover:bg-rcb-red/90 text-white rounded-full py-6 px-6 space-x-2 transition-all"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-play">
                   <polygon points="5 3 19 12 5 21 5 3" />
@@ -102,7 +102,7 @@ const AppPreview = () => {
               </Button>
               
               <Button 
-                className="rcb-btn-primary py-6 space-x-2"
+                className="bg-rcb-red hover:bg-rcb-red/90 text-white rounded-full py-6 px-6 space-x-2 transition-all"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-apple">
                   <path d="M12 20.94c1.5 0 2.75-.75 4.5-.75 1.5 0 2.5.75 4 .75 1 0 1.5-.25 2-.75-2.5-.5-3-2.5-3-4.5 0-1.5.5-3 1.5-4-1.5-1.5-3-2-4.5-2-1.5 0-2.5.75-4 .75-1.75 0-2.75-.75-4.25-.75-2 0-4.5 1.75-4.5 6.25 0 4 2.75 8 5 8 1.25 0 2-.75 3.75-.75 1.75 0 2.25.75 3.5.75Z" />
@@ -157,7 +157,7 @@ const AppPreview = () => {
                   
                   {/* Menu items */}
                   <div className="grid grid-cols-3 gap-3 mb-4">
-                    {["Matches", "News", "Videos", "Tickets", "Shop", "Gallery"].map((item) => (
+                    {["Matches", "News", "Videos", "Tickets", "Shop", "Fan Zone"].map((item) => (
                       <div key={item} className="bg-rcb-darkgray rounded-lg p-2 text-center">
                         <div className="w-8 h-8 mx-auto bg-rcb-red/20 rounded-full mb-1"></div>
                         <div className="text-white text-xs">{item}</div>
@@ -195,27 +195,52 @@ const AppPreview = () => {
                     </div>
                   </div>
                   
-                  {/* News section */}
+                  {/* Fan Zone section */}
                   <div className="bg-rcb-darkgray rounded-lg p-3 mb-4">
                     <div className="flex items-center justify-between mb-2">
-                      <div className="text-white text-xs font-bold">LATEST NEWS</div>
+                      <div className="text-white text-xs font-bold">FAN ZONE</div>
                       <div className="text-rcb-red text-xs">View All</div>
                     </div>
                     
                     <div className="space-y-3">
                       {[1, 2].map((item) => (
-                        <div key={item} className="flex items-center">
-                          <div className="w-16 h-16 bg-gray-700 rounded-md flex-shrink-0"></div>
-                          <div className="ml-2">
-                            <div className="text-white text-xs font-medium line-clamp-2">Virat Kohli's outstanding performance leads RCB to victory</div>
-                            <div className="text-gray-400 text-xs mt-1">2 hours ago</div>
+                        <div key={item} className="bg-black/20 rounded-lg p-2">
+                          <div className="flex items-start">
+                            <div className="w-8 h-8 bg-rcb-red/20 rounded-full flex-shrink-0"></div>
+                            <div className="ml-2 flex-1">
+                              <div className="flex justify-between items-start">
+                                <div className="text-white text-xs font-medium">RCB Fan {item}</div>
+                                <div className="text-gray-400 text-xs">1h ago</div>
+                              </div>
+                              <div className="text-white text-xs mt-1">Go RCB! Let's win this season! 🏆</div>
+                            </div>
+                          </div>
+                          <div className="flex justify-between items-center mt-2">
+                            <div className="flex space-x-3">
+                              <div className="text-gray-400 text-xs flex items-center">
+                                <div className="w-3 h-3 mr-1">❤️</div> 24
+                              </div>
+                              <div className="text-gray-400 text-xs flex items-center">
+                                <div className="w-3 h-3 mr-1">💬</div> 5
+                              </div>
+                            </div>
+                            <div className="text-rcb-red text-xs">Reply</div>
                           </div>
                         </div>
                       ))}
                     </div>
+                    
+                    <div className="mt-3 flex">
+                      <div className="w-8 h-8 bg-rcb-red/20 rounded-full flex-shrink-0"></div>
+                      <div className="ml-2 flex-1">
+                        <div className="bg-black/30 rounded-full px-3 py-1.5 text-white text-xs">
+                          Share your thoughts...
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
-                  {/* Videos section */}
+                  {/* News section */}
                   <div className="bg-rcb-darkgray rounded-lg p-3">
                     <div className="flex items-center justify-between mb-2">
                       <div className="text-white text-xs font-bold">VIDEOS</div>
